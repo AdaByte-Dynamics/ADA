@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adabyte Dynamics</title>
+    <link rel="stylesheet" href="../assets/css/general.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body id="top">
+
+<header class="header" data-header>
+    <div class="container">
+
+        <img src="../assets/images/logosvg.svg" alt="" width="150" height="40">
+
+
+        <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <nav class="navbar" data-navbar>
+
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <a href="#" class="logo">Adabyte</a>
+
+            <ul class="navbar-list">
+
+                <li>
+                    <a href="../index.html" class="navbar-link" data-nav-link>
+                        <span>Home</span>
+
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./pages/about-us.html" class="navbar-link active" data-nav-link>
+                        <span>About</span>
+
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#service" class="navbar-link" data-nav-link>
+                        <span>Service</span>
+
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#donate" class="navbar-link" data-nav-link>
+                        <span>Resource</span>
+
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#event" class="navbar-link" data-nav-link>
+                        <span>Pricing</span>
+
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+
+
+            </ul>
+
+        </nav>
+
+        <div class="header-action">
+
+            <button class="search-btn" aria-label="Search">
+                <ion-icon name="search-outline"></ion-icon>
+            </button>
+
+            <button class="btn btn-primary">
+                <span>Contact</span>
+
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            </button>
+
+        </div>
+
+    </div>
+</header>
+
+
+<main>
+    <section class="about__header hero">
+        <div class="aboutus__main_header">
+            <div class="left_header_container">
+                <h4>About Adabyte</h4>
+                <h1>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, molestias!
+                </h1>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+
+<script>
+    const listItems = document.querySelectorAll('.services-list li');
+    const infoCard = document.querySelector('.info-card');
+    const imageContainer = document.querySelector('.image-container img');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+
+    listItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            // Remove active class from all
+            listItems.forEach(li => li.classList.remove('active'));
+
+            // Add active class to current
+            item.classList.add('active');
+
+            // Update info card content
+            const title = item.getAttribute('data-title');
+            const description = item.getAttribute('data-description');
+            const imageSrc = item.getAttribute('data-image');
+
+            infoCard.querySelector('h3').textContent = title;
+            infoCard.querySelector('p').textContent = description;
+            imageContainer.src = imageSrc;
+        });
+    });
+</script>
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
